@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	 
+	<link rel="stylesheet" href="assets/css/core.min.css">
+	<link rel="stylesheet" href="assets/css/core-colors.min.css">
+	<link rel="stylesheet" href="assets/css/core-icons.min.css">
+	<link rel="stylesheet" href="assets/css/style.dash.css">
+<title>AMIGO Login Page | ... </title>
+</head>
+  <body>
+    
+   <div class="app">
+        <header class="header"><img alt="AMIGO" src="assets/images/amigologo.png"></header>
+        
+ 
+        <div class="view-content">
+			<div id="inner2">
+				<div class="card image-header">
+					
+					<div class="card-content">
+						<p class="fg-gray">Infos de la cartes</p>
+						Client 26 : Mme NANGUE<br />
+						Secteur : PK 8<br />
+						Solde Actuel : 28 
+					</div>
+					<div class="card-footer">
+						<button class="flat-button fg-blue" type="button" onclick="window.location.href = 'dash.html'">Annuler l'operation</button>
+						<button class="flat-button fg-blue" onclick="scan();">Continuer</button>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="bottom-nav">
+			<button class="button">
+				<span class="icon i-home" onclick="window.location.href = 'dash.html'"></span>
+				<span class="label" onclick="window.location.href = 'dash.html'">Accueil</span>
+			</button>
+			
+			<button class="button">
+				<span class="icon i-power" onclick="window.location.href = 'index.html'"></span>
+				<span class="label" onclick="window.location.href = 'index.html'">Déconnexion</span>
+			</button>
+		</div>
+    </div>
+	<script type="text/javascript" src="cordova.js"></script><!--
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="assets/js/core.min.js"></script>
+    <script src="assets/js/app.js"></script>-->
+    <script>
+		function scan() {
+                cordova.plugins.barcodeScanner.scan(
+				  function (result) {
+					 // alert("We got a barcode\n" +
+					//		"Result: " + result.text + "\n" +
+					//		"Format: " + result.format + "\n" +
+					//		"Cancelled: " + result.cancelled);
+				  },
+				  function (error) {
+					  alert("Scanning failed: " + error);
+				  },
+				  {
+					  preferFrontCamera : false, // iOS and Android
+					  showFlipCameraButton : true, // iOS and Android
+					  showTorchButton : false, // iOS and Android
+					  torchOn: false, // Android, launch with the torch switched on (if available)
+					  prompt : "Identifier l'article du client", // Android
+					  resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+					  formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+					  orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+					  disableAnimations : true, // iOS
+					  disableSuccessBeep: false // iOS
+				  }
+			    );
+			   window.location.href = 'dash3.html';
+            }
+            
+            
+			function openURL(url)
+			{
+				window.open(url, '_blank', 'location=yes');
+			}
+		         
+	</script>
+  </body>
+</html>

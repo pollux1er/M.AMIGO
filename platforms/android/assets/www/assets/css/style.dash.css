@@ -1,0 +1,49 @@
+header.header {
+	background-color : #d5d2c9;
+	height : 12%;
+}
+
+.header img {
+	height : 96%
+}
+
+.card {
+	float: left;
+    margin-left: 6%;
+    width: 200px;
+}
+
+.card-content, .card-header {
+    padding: 10px;
+}
+
+.card-content {
+	height : 58px;
+	overflow : hidden;
+}
+
+#inner {
+	margin: 10% auto;
+    width: 85%;
+	margin-top : 15%;
+}
+
+#inner2 {
+	margin: 10% auto;
+    width: 46%;
+	margin-top : 15%;
+}
+
+#inner2 .card {
+	display : table;
+	width : 70%;
+}
+
+#inner2 .card-content, #inner2 .card-header {
+    padding: 10px;
+}
+
+#inner2 .card-content {
+	height : 120px;
+	overflow : hidden;
+}
