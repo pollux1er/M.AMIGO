@@ -1,0 +1,59 @@
+.bottom-nav {
+	position : fixed;
+}
+
+.bottom-nav button.button {
+	width : 49%
+}
+
+.bottom-nav {
+	background-color : white;
+}
+
+.bottom-nav span {
+	color : black;
+}
+
+header.header {
+	background-color : #d5d2c9;
+	height : 12%;
+}
+
+.header img {
+	height : 96%
+}
+
+.card-header {
+	max-height : 100px;
+}
+
+#client-infos {
+	width : 95%;
+	margin : auto;
+}
+.view-content {
+	padding-top: 2%;
+    width: 100%;
+	position : fixed;
+	top : 12%;
+}
+
+.ui-listview-inset {
+	width : 100%;
+}
+
+.annuler {
+	width : 35%;
+}
+
+#btn-scan-client {
+	width : 57%
+}
+
+#clients-list-ctn {
+	width : 100%;
+}
+
+ul.ui-listview {
+	width : 100%;
+}

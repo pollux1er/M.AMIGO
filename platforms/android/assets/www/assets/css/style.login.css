@@ -16,53 +16,72 @@ p {
 	font-family: 'futura', sans-serif !important;
 }
 
-.container-table {
+#page-signin {
+    height: 100%;
+	background: #D5D2C9 url(../images/patternbg.png);
+}
+#page-signin #chk-keep-signed-in {
+    position : relative;
+	margin-top : -2px;
+	margin-right : 10px;
+}
+#page-signin .ui-shadow-inset,#page-signin .ui-focus  {
+    box-shadow : none;
+}
+#page-signin .container-table {
     display: table;
 }
-.vertical-center-row {
+
+#page-signin .vertical-center-row {
     display: table-cell;
     vertical-align: middle;
 }
 
-.loginbox form { display: block; margin-top: 20px; font-family: 'futural', sans-serif !important; }
-.loginbox .username { 
+#page-signin .loginbox form { display: block; margin-top: 20px; font-family: 'futural', sans-serif !important; }
+#page-signin .loginbox .username { 
 	background: #eee url(../images/icons/username.png) no-repeat 13px center; -moz-border-radius: 2px; -webkit-border-radius: 2px; 
 	border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4); 
 	box-shadow: 0 1px 2px rgba(0,0,0,0.4); margin: 20px 0;
 }
-.loginbox .usernameinner { 
+#page-signin .loginbox .usernameinner { 
 	margin-left: 45px; border-left: 1px solid #ddd; background: #fff; padding-right: 20px; 
 	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
 }
-.loginbox .username input { 
+#page-signin .loginbox .usernameinner div, #page-signin .loginbox .passwordinner div { 
+	border-style : none !important;
+	margin : 0;
+	display : block;
+}
+#page-signin .loginbox .username input { 
 	padding: 15px 10px; border: 0; font-size: 14px; width: 100%; box-shadow: none; color: #666; 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; -moz-border-radius: 0 2px 2px 0; -webkit-border-radius: 0 2px 2px 0;
 	border-radius: 0 2px 2px 0;
 }
-.loginbox .password { 
+#page-signin .loginbox .password { 
 	background: #eee url(../images/icons/password.png) no-repeat 13px center; -moz-border-radius: 2px; -webkit-border-radius: 2px; 
 	border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4); 
 	box-shadow: 0 1px 2px rgba(0,0,0,0.4); margin: 20px 0; overflow: hidden;
 }
-.loginbox .passwordinner { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
-.loginbox .password input { 
+#page-signin .loginbox .passwordinner { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
+#page-signin .loginbox .password input { 
 	padding: 15px 10px; border: 0; font-size: 14px; width: 330px; box-shadow: none; color: #666; 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
 }
 
-.loginbox button { 
-	background: #dc1915 url(../images/btngrad.png) repeat-x top left; border: 0; padding: 15px 0; text-align: center; 
+#page-signin .loginbox a#btn-submit,#page-signin  .loginbox button { 
+	background: #dc1915 url(../images/btngrad.png) repeat-x top left; border: 0; padding: 15px 38%; text-align: center; 
 	font-family: 'futura', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: normal; width: 100%; text-transform: uppercase;  
 	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); 
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4); box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4); box-shadow: 0 1px 2px rgba(0,0,0,0.4); color : black;
 }
-.loginbox button:hover { background-color: #f71c18; }
-.loginbox .keep { margin-top: 20px; font-weight: bold; color: #000; font-size: 16px; }
-.loginbox .loginmsg { 
+
+#page-signin .loginbox a#btn-submit:hover,#page-signin  .loginbox button:hover { background-color: #f71c18; text-decoration : none; }
+#page-signin .loginbox .keep { margin-top: 20px; font-weight: bold; color: #000; font-size: 16px; }
+#page-signin .loginbox .loginmsg { 
 	background: #fffccc; color: #333; margin-bottom: 10px; padding: 5px; text-align: center; font-size: 11px; 
 	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px;
 }
-.loginf { 
+#page-signin .loginf { 
 	padding: 10px; background: #2e3e59; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; 
 	-moz-box-shadow: inset 0 1px 1px #23324b; -webkit-box-shadow: inset 0 1px 1px #23324b; box-shadow: inset 0 1px 1px #23324b;
 	border-bottom: 1px solid #475875;

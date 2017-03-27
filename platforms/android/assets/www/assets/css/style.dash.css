@@ -1,49 +1,55 @@
-header.header {
+#page-dashboard header.header {
 	background-color : #d5d2c9;
 	height : 12%;
 }
 
-.header img {
+#page-dashboard  .header img {
 	height : 96%
 }
 
-.card {
+#page-dashboard  .card {
 	float: left;
     margin-left: 6%;
-    width: 200px;
+    width: 170px;
 }
 
-.card-content, .card-header {
+#page-dashboard .card-content, .card-header {
     padding: 10px;
 }
 
-.card-content {
+#page-dashboard .card-content {
 	height : 58px;
 	overflow : hidden;
 }
 
-#inner {
+#page-dashboard #inner {
 	margin: 10% auto;
     width: 85%;
 	margin-top : 15%;
+	display : initial;
 }
 
-#inner2 {
+#page-dashboard #inner2 {
 	margin: 10% auto;
     width: 46%;
 	margin-top : 15%;
 }
 
-#inner2 .card {
+#page-dashboard #inner2 .card {
 	display : table;
 	width : 70%;
 }
 
-#inner2 .card-content, #inner2 .card-header {
+#page-dashboard #inner2 .card-content, #page-dashboard #inner2 .card-header {
     padding: 10px;
 }
 
-#inner2 .card-content {
+#page-dashboard #inner2 .card-content {
 	height : 120px;
 	overflow : hidden;
+}
+
+#page-dashboard input[type='checkbox'] {
+	position : relative;
+	margin : 0;
 }

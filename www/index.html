@@ -1,44 +1,237 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AMIGO Login Page | ... </title>
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+<title>AMIGO</title>
 <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
+
+<!-- CSS pour le login -->
 <link rel="stylesheet" href="assets/css/style.login.css" type="text/css" />
+
+<!-- CSS pour le dash -->
+<link rel="stylesheet" href="assets/css/core.min.css">
+<link rel="stylesheet" href="assets/css/core-colors.min.css">
+<link rel="stylesheet" href="assets/css/core-icons.min.css">
+<link rel="stylesheet" href="assets/css/style.dash.css" type="text/css" />
+<!-- Fin CSS pour le dash -->
+
+<link href="assets/lib/jqm/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+
 </head>
 
 <body>
-
-	<div class="container container-table loginbox">
-		<div class="row vertical-center-row loginboxinner">
-			<div class="text-center col-md-4 col-md-offset-4" style="">
-				<div class="logo">
-					<img alt="AMIGO" src="assets/images/amigologo.png"> 
-					<br>
-					<p>SERVICE DE FIDELISATION</p>
+	<div data-role="page" id="page-signin">
+		<div class="container container-table loginbox">
+			<div class="row vertical-center-row loginboxinner">
+				<div class="text-center col-md-4 col-md-offset-4" style="">
+					<div class="logo">
+						<img alt="AMIGO" src="assets/images/amigologo.png"> 
+						<br>
+						<p>PROGRAMME DE FIDELISATION</p>
+					</div>
+					<div id="ctn-err" class=""></div>
+					  <form id="login" action="dash.html" method="post">
+						
+						<div class="username">
+							<div class="usernameinner">
+								<input type="text" name="username" id="username" placeholder="Login" />
+							</div>
+						</div>
+						
+						<div class="password">
+							<div class="passwordinner">
+								<input type="password" name="txt-password" id="txt-password" placeholder="Mot de passe" />
+							</div>
+						</div>
+						
+						<a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" >Connexion</a>
+						
+						<div class="keep"><input type="checkbox" name="chk-keep-signed-in" id="chk-keep-signed-in" /> Gardez moi connecté</div>
+					
+					</form>
 				</div>
-				  <form id="login" action="dash.html" method="post">
-					
-					<div class="username">
-						<div class="usernameinner">
-							<input type="text" name="username" id="username" placeholder="Login" />
-						</div>
-					</div>
-					
-					<div class="password">
-						<div class="passwordinner">
-							<input type="password" name="password" id="password" placeholder="Mot de passe" />
-						</div>
-					</div>
-					
-					<button id="login-button">Connexion</button>
-					
-					<div class="keep"><input type="checkbox" /> Gardez moi connecté</div>
-				
-				</form>
 			</div>
 		</div>
-	</div>
+	</div><!-- /page -->
+	
+	<div data-role="page" id="page-dashboard" style="height:100%">
+        <div class="app">
+        <header data-role="header" class="header" data-position="fixed"><img alt="AMIGO" src="assets/images/amigologo.png"></header>
+         
+        <div class="view-content ui-content" role="main">
+			<div id="inner">
+			<div id="results"></div>
+				<div class="card image-header shadow-1">
+					<div class="card-header fg-white"
+						 style="background-image: url(assets/images/qr1.jpg)">
+						Scanner 
+					</div>
+					<div class="card-content">
+						Identifier un client et mettre à jour son compte
+					</div>
+					<div class="card-footer">
+						<a class="flat-button fg-blue" data-role="button" type="button" id="btn-scan" >Comptabiliser</a>
+					</div>
+				</div>
+				<div class="card image-header shadow-1">
+					<div class="card-header fg-white"
+						 style="background-image: url(assets/images/clients.png)">
+						Clients 
+					</div>
+					<div class="card-content">
+						Afficher la liste de mes clients
+					</div>
+					<div class="card-footer">
+						<a href="#page-clients" class="flat-button fg-blue" type="button" data-role="button" data-transition="slide" data-position-to="window" id="btn-clients">Clients</a>
+					</div>
+				</div>
+				<div class="card image-header shadow-1">
+					<div class="card-header fg-white"
+						 style="background-image: url(assets/images/mappin.jpg)">
+						Secteurs couverts 
+					</div>
+					<div class="card-content">
+						Afficher tous les secteurs que je couvre
+					</div>
+					<div class="card-footer">
+						<button class="flat-button fg-blue">Secteurs</button>
+					</div>
+				</div>
+				<div class="card image-header shadow-1">
+					<div class="card-header fg-white"
+						 style="background-image: url(assets/images/reports.jpg)">
+						Rapports Journaliers
+					</div>
+					<div class="card-content">
+						Consulter ses rapports de la journée
+					</div>
+					<div class="card-footer">
+						<button class="flat-button fg-blue">Rapports</button>
+					</div>
+				</div>
+			
+			</div>
+        </div>
+		
+		<div class="bottom-nav" data-role="footer" data-position="fixed">
+			<button class="button">
+				<span class="icon i-home"></span>
+				<span class="label">Accueil</span>
+			</button>
+			
+			<button class="button">
+				<span class="icon i-power" onclick="window.location.href = '#page-signin'" id="span-logout"></span>
+				<span class="label" onclick="window.location.href = 'index.html'" id="">Déconnexion</span>
+			</button>
+		</div>
+    </div>
+    </div><!-- /page -->
+	
+	<div data-role="page" id="page-clients">
+        <div class="app">
+			<header data-role="header" class="header"><img alt="AMIGO" src="assets/images/amigologo.png"></header>
+			 
+			<div id="clients-list-ctn" class="view-content ui-content" role="main">
+				Voici la page qui liste les clients de l'Agent connecté!
+			</div>
+			
+			<div class="bottom-nav" data-role="footer">
+				<button class="button">
+					<span class="icon i-home" onclick="window.location.href = '#page-dashboard'"></span>
+					<span class="label" onclick="window.location.href = '#page-dashboard'">Accueil</span>
+				</button>
+				
+				<button class="button">
+					<span class="icon i-power" onclick="window.location.href = '#page-signin'" id="span-logou"></span>
+					<span class="label" onclick="window.location.href = 'index.html'" id="">Déconnexion</span>
+				</button>
+			</div>
+		</div>
+    </div><!-- /page -->
+	
+	<div data-role="page" id="page-client-infos">
+        <div class="app">
+			<header data-role="header" class="header"><img alt="AMIGO" src="assets/images/amigologo.png"></header>
+			 
+			<div class="view-content ui-content" role="main">
+				<div id="client-infos">
+					<ul data-role="listview" data-inset="true" data-divider-theme="a">
+						<li data-role="list-divider">Information sur la cliente</li>
+						<li>Nom : <span id="client-nom"></span></li>
+						<li>Numero : <span id="client-numero"></span></li>
+						<li data-role="list-divider">Information sur la compétition</li>
+						<li>Nombre de points : <span id="client-quota"></span></li>
+					</ul>
+					<a href="#" class="annuler ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-back" onclick="window.location.href = '#page-dashboard'">Annuler</a>
+					<a href="#" data-role="button" type="button" id="btn-scan-client" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-right ui-icon-camera">Mettre à jour</a>
+					
+				</div>
+				
+			</div>
+			
+			<div class="bottom-nav" data-role="footer">
+				<button class="button">
+					<span class="icon i-home" onclick="window.location.href = '#page-dashboard'"></span>
+					<span class="label" onclick="window.location.href = '#page-dashboard'">Accueil</span>
+				</button>
+				
+				<button class="button">
+					<span class="icon i-power" onclick="window.location.href = '#page-signin'" id="span-logou"></span>
+					<span class="label" onclick="window.location.href = 'index.html'" id="">Déconnexion</span>
+				</button>
+			</div>
+		</div>
+    </div><!-- /page -->
+	
+	<div data-role="page" id="page-client-updated-quota">
+        <div class="app">
+			<header data-role="header" class="header"><img alt="AMIGO" src="assets/images/amigologo.png"></header>
+			 
+			<div class="view-content ui-content" role="main">
+				<div id="client-infos-updated">
+					<ul data-role="listview" data-inset="true" data-divider-theme="a">
+						<li data-role="list-divider">Information sur la cliente</li>
+						<li>Nom : <span id="client-nom2"></span></li>
+						<li>Numero : <span id="client-numero2"></span></li>
+						<li data-role="list-divider">Information sur la compétition</li>
+						<li>Nombre de points : <span id="client-quota2"></span></li>
+					</ul>
+					<a href="#" class="annuler ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-back" onclick="window.location.href = '#page-dashboard'">Annuler</a>
+					<a href="#" data-role="button" type="button" id="btn-update-client-quota" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-right ui-icon-check">Valider la mise à jour</a>
+					
+				</div>
+				
+			</div>
+			
+			<div class="bottom-nav" data-role="footer">
+				<button class="button">
+					<span class="icon i-home" onclick="window.location.href = '#page-dashboard'"></span>
+					<span class="label" onclick="window.location.href = '#page-dashboard'">Accueil</span>
+				</button>
+				
+				<button class="button">
+					<span class="icon i-power" onclick="window.location.href = '#page-signin'" id="span-logou"></span>
+					<span class="label" onclick="window.location.href = 'index.html'" id="">Déconnexion</span>
+				</button>
+			</div>
+		</div>
+    </div><!-- /page -->
+	
+	<script type="text/javascript" src="cordova.js"></script>
+    <script src="assets/lib/fastclick/fastclick.min.js"></script>
+    <script src="assets/lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/api-messages.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/signin-controller.js"></script>
+    <script src="assets/js/dashboard-controller.js"></script>
+    <script src="assets/js/clients-controller.js"></script>
+    <script src="assets/js/client-info-update-controller.js"></script>
+    <script src="assets/js/client-infos-controller.js"></script>
+	<script type="text/javascript" src="assets/js/index.js"></script>
+    <script src="assets/lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
 </body>
 </html>

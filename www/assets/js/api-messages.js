@@ -1,0 +1,12 @@
+﻿var Amigo = Amigo || {};
+Amigo.ApiMessages = Amigo.ApiMessages || {};
+Amigo.ApiMessages.EMAIL_NOT_FOUND = 1;
+Amigo.ApiMessages.INVALID_PWD = 2;
+Amigo.ApiMessages.DB_ERROR = 3;
+Amigo.ApiMessages.NOT_FOUND = 4;
+Amigo.ApiMessages.PASSWORD_RESET_EXPIRED = 7;
+Amigo.ApiMessages.PASSWORD_RESET_HASH_MISMATCH = 8;
+Amigo.ApiMessages.PASSWORD_RESET_EMAIL_MISMATCH = 9;
+Amigo.ApiMessages.COULD_NOT_RESET_PASSWORD = 10;
+Amigo.ApiMessages.PASSWORD_CONFIRM_MISMATCH = 11;
+Amigo.ApiMessages.SESSION_NOT_FOUND = 12;
